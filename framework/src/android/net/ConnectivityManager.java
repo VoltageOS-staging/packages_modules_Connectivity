@@ -1351,6 +1351,9 @@ public class ConnectivityManager {
     }
 
     /** {@hide} */
+    @RequiresPermission(android.Manifest.permission.NETWORK_STACK)
+    @SystemApi(client = MODULE_LIBRARIES)
+    @Nullable
     public Network getActiveNetworkForUid(int uid, boolean ignoreBlocked) {
         try {
             return mService.getActiveNetworkForUid(uid, ignoreBlocked);
